@@ -131,7 +131,7 @@ def main():
         for ball in ball_list:
             pygame.draw.circle(screen, ball.color, (ball.x, ball.y), ball_size)
 
-        clock.tick(120)
+        clock.tick(60)
         pygame.display.flip()
 
     pygame.quit()
