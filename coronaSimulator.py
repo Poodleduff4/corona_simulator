@@ -55,9 +55,10 @@ def infection(balls, infected_balls):
 def find_nearest(ball, ball_list, infected_balls):
     near_balls = []
     for check_ball in ball_list:
-        if abs(check_ball.x - ball.x) - ball_size <= 50 and abs(check_ball.y - ball.y) - ball_size <= 50:
-            if check_ball not in infected_balls:
-                near_balls.append(check_ball)
+         if abs(check_ball.x - ball.x) - ball_size <= 50 and abs(check_ball.y - ball.y) - ball_size <= 50:
+             pass
+    #         if check_ball not in infected_balls:
+    #             near_balls.append(check_ball)
 
     if len(near_balls) > 0:
         return near_balls
@@ -80,11 +81,11 @@ def main():
     clock = pygame.time.Clock()
     ball_list = []
     infected_balls = []
-    for i in range(starting_balls):
+    for i in range(10000):
         ball = make_ball(blue)
         ball_list.append(ball)
 
-    for i in range(0):
+    for i in range(100):
         ball = make_ball(green)
         ball_list.append(ball)
         infected_balls.append(ball)
@@ -131,7 +132,7 @@ def main():
         for ball in ball_list:
             pygame.draw.circle(screen, ball.color, (ball.x, ball.y), ball_size)
 
-        clock.tick(60)
+        clock.tick(120)
         pygame.display.flip()
 
     pygame.quit()
